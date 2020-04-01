@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@47.100.45.101:1521/xe
+    password: zhifa123
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: zhifa
+    hikari:
+      max-lifetime: 1200000
+server:
+  servlet:
+    context-path: /
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.zhifa.chatapp.domain
+  configuration:
+    map-underscore-to-camel-case: true
+pagehelper:
+  helperDialect: oracle
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+#mybatis的sql日志打印
+logging:
+  level:
+    com.zhifa.chatapp.mapper: debug
